@@ -20,12 +20,12 @@ fn game() {
 
 }
 
-fn input(text: &str) -> &str {
+fn input(text: &str) -> String {
     print!("{}", text);
     io::stdout().flush().unwrap(); //remove newline character 
 
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("failed to read input");
     input = input.trim();
-    return input;
+    return input
 }
