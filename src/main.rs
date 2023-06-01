@@ -1,6 +1,17 @@
 use std::io;
 use std::io::Write;
 
+
+
+/* ---------------------------------------------
+
+        TODO:
+                merge input and get_valid_input
+                clean up main "game welcome" loop 
+                    use wildcard instead of Err(_) to avoid having to check valid input twice in following match statement
+
+*/
+
 fn main() {
     loop {
         println!("Welcome to twentyone");
@@ -28,7 +39,17 @@ fn main() {
 }
 
 fn game() {
-    println!("HAHAH");
+    get_valid_input();
+}
+
+fn get_valid_input() -> u8 {
+    loop {
+        let num = input("enter increase to the total (1-3): ");
+        match num.trim().parse::<u8>() {
+            Ok(n) if n >= 1 && n <= 3 => return n,
+            _ => println!("deez"),
+        }
+    }
 }
 
 fn input(text: &str) -> String {
