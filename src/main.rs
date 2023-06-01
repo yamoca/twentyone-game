@@ -10,7 +10,8 @@ fn main() {
             Ok(n) => n,
             Err(_) => {
                 println!("Invalid input, enter a valid number");
-                return;
+                main(); //hacky - fix at later date
+                break;
             }
         };
 
