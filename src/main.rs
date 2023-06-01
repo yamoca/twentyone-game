@@ -11,14 +11,13 @@ fn main() {
             Err(_) => {
                 println!("Invalid input, enter a valid number");
                 return;
-                println!("still here");
             }
         };
 
         match choice {
             1 => {
                 game();
-                break
+                break;
             }
             2 => std::process::exit(000000),
             _ => println!("Failed to match input to choice, enter a valid number between 1 and 2")
